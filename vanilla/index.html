@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>🍦 JS Image Search</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <h1>🍦 JS Image Search</h1>
+    <form>
+      <label for="searchTerm">Search</label>
+      <input class="u-full-width" type="text" />
+      <input type="submit" />
+    </form>
+    <img
+      id="loadingImage"
+      src="http://i.imgur.com/LVHmLnb.gif"
+      alt="Icecream"
+    />
+    <section class="images"></section>
+    <!-- Offline Support -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').then(function() {
+          console.log('Service Worker Registered');
+        });
+      }
+    </script>
+    <script src="main.js"></script>
+  </body>
+</html>
